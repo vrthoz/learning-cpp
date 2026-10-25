@@ -4,15 +4,18 @@ using namespace std;
 
 int main() {
     int pilihan;
-    double a, b;
+    double a = 0, b = 0;
     do {
-        cout << "1. Tambah\n2. Kurang\n3. Kali\n4. Bagi\n0. Keluar\n" << endl;
+        cout << "1. Tambah\n2. Kurang\n3. Kali\n4. Bagi\n5. Modulo\n0. Keluar\n" << endl;
         cout << "Pilih: ";
         cin >> pilihan;
-        cout << "Masukkan angka pertama: ";
-        cin >> a;
-        cout << "Masukkan angka kedua: ";
-        cin >> b;
+        if (pilihan >=1 && pilihan <=5) {
+            cout << "Masukkan angka pertama: ";
+            cin >> a;
+            cout << "Masukkan angka kedua: ";
+            cin >> b;
+        }
+
         switch (pilihan) {
             case 1: 
             cout << "Hasil: " << a + b << endl;
@@ -27,8 +30,15 @@ int main() {
             if (b==0) {
                 cout << "Maaf, tidak bisa melakukan pembagian dengan 0, coba angka lain" << endl;
             } else {
-                cout << "Hasil: " << a/b << endl;
+                cout << "Hasil: " << a / b << endl;
             } 
+            break;
+            case 5:
+            if ((int)b==0) {
+                cout << "Maaf, tidak bisa menghitung modulo dengan 0, coba angka lain" << endl;
+            } else {
+                cout << "Hasil: " << (int) a % (int) b << endl;
+            }
             break;
             case 0: cout << "Sampai jumpa!\n"; break;
             default: cout << "Invalid\n";
